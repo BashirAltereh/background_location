@@ -35,13 +35,7 @@ class BackgroundLocator {
     }
 
     final args = SettingsUtil.getArgumentsMap(
-        callback: (t){
-          try {
-            callback(t);
-          }catch(e){
-
-          }
-        },
+        callback: callback,
         initCallback: initCallback,
         initDataCallback: initDataCallback,
         disposeCallback: disposeCallback,
