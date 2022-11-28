@@ -36,16 +36,16 @@ class SettingsUtil {
   }) {
     final Map<String, dynamic> args = {
       Keys.ARG_CALLBACK:
-          PluginUtilities.getCallbackHandle(callback)!.toRawHandle(),
+          PluginUtilities.getCallbackHandle(callback)?.toRawHandle(),
     };
 
     if (initCallback != null) {
       args[Keys.ARG_INIT_CALLBACK] =
-          PluginUtilities.getCallbackHandle(initCallback)!.toRawHandle();
+          PluginUtilities.getCallbackHandle(initCallback)?.toRawHandle();
     }
     if (disposeCallback != null) {
       args[Keys.ARG_DISPOSE_CALLBACK] =
-          PluginUtilities.getCallbackHandle(disposeCallback)!.toRawHandle();
+          PluginUtilities.getCallbackHandle(disposeCallback)?.toRawHandle();
     }
     if (initDataCallback != null ){
       args[Keys.ARG_INIT_DATA_CALLBACK] = initDataCallback;
@@ -63,10 +63,14 @@ class SettingsUtil {
 
     if (androidSettings.androidNotificationSettings.notificationTapCallback !=
         null) {
-      args[Keys.ARG_NOTIFICATION_CALLBACK] = PluginUtilities.getCallbackHandle(
-              androidSettings
-                  .androidNotificationSettings.notificationTapCallback!)!
-          .toRawHandle();
+      try {
+        args[Keys.ARG_NOTIFICATION_CALLBACK] = PluginUtilities.getCallbackHandle(
+            androidSettings
+                .androidNotificationSettings.notificationTapCallback!)!
+            .toRawHandle();
+      }catch(e){
+
+      }
     }
 
     return args;
