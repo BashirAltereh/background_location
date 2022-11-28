@@ -1,6 +1,6 @@
 name: background_location
 description: A Flutter plugin to request the location even if the app is killed. Sending the location to a dart function in background, also provide a meter filter
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/BashirAltereh/background_location
 
 environment:
