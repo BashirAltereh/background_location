@@ -3,11 +3,11 @@ import 'dart:ffi';
 import 'dart:isolate';
 import 'dart:ui';
 
-import 'package:background_locator/background_locator.dart';
-import 'package:background_locator/location_dto.dart';
-import 'package:background_locator/settings/android_settings.dart';
-import 'package:background_locator/settings/ios_settings.dart';
-import 'package:background_locator/settings/locator_settings.dart';
+import 'package:background_location/background_locator.dart';
+import 'package:background_location/location_dto.dart';
+import 'package:background_location/settings/android_settings.dart';
+import 'package:background_location/settings/ios_settings.dart';
+import 'package:background_location/settings/locator_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:location_permissions/location_permissions.dart';
 

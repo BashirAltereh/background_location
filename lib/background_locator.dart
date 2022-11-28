@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:background_locator/settings/android_settings.dart';
-import 'package:background_locator/settings/ios_settings.dart';
-import 'package:background_locator/utils/settings_util.dart';
+import 'package:background_location/settings/android_settings.dart';
+import 'package:background_location/settings/ios_settings.dart';
+import 'package:background_location/utils/settings_util.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -31,11 +31,17 @@ class BackgroundLocator {
       AndroidSettings androidSettings = const AndroidSettings(),
       IOSSettings iosSettings = const IOSSettings()}) async {
     if (autoStop) {
-      WidgetsBinding.instance!.addObserver(AutoStopHandler());
+      WidgetsBinding.instance?.addObserver(AutoStopHandler());
     }
 
     final args = SettingsUtil.getArgumentsMap(
-        callback: callback,
+        callback: (t){
+          try {
+            callback(t);
+          }catch(e){
+
+          }
+        },
         initCallback: initCallback,
         initDataCallback: initDataCallback,
         disposeCallback: disposeCallback,
